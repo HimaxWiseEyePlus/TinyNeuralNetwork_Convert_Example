@@ -30,6 +30,7 @@ pip install torch==2.5.0
 pip install -r requirements.txt
 pip install torchvision==0.20.0
 pip install ethos-u-vela
+pip install tensorflow
 # download himax vela config ini
 wget https://raw.githubusercontent.com/HimaxWiseEyePlus/ML_FVP_EVALUATION/main/vela/himax_vela.ini
 cp ../ptq_example.py ./
