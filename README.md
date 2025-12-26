@@ -74,14 +74,14 @@ python3 inference_int8.py --image_path ../images/truck.jpeg  --model_path ../mod
 
 # Pass Vela compiler to vela model which can run on WE2 U55 NPU
 - Please use the latest version about ethos-u-vela for supporting more operator at U55 NPU.
-- Recommand environment: `Python 3.12`, `ethos-u-vela>=4.5.0`
+- Recommand environment: `ethos-u-vela>=4.5.0`
 - You can use the Colab to create the environment simply.
 The tensor arena used at mobilenet is big. You can add vela CLI `--optimise Size` to optimise SRAM size.
 - [int8 tflite model path]: you should put your own int8 tflite path name at here
 ```
-vela --accelerator-config ethos-u55-64 --config ../himax_vela.ini --system-config My_Sys_Cfg --memory-mode My_Mem_Mode_Parent --optimise Size --output-dir ./ ./[int8 tflite model path]
+vela --accelerator-config ethos-u55-64 --config ./himax_vela.ini --system-config My_Sys_Cfg --memory-mode My_Mem_Mode_Parent --optimise Size --output-dir ./ ./[int8 tflite model path]
 
-#vela --accelerator-config ethos-u55-64 --config ../himax_vela.ini --system-config My_Sys_Cfg --memory-mode My_Mem_Mode_Parent --optimise Size --output-dir ../model_zoo ../model_zoo/qat_pruning_model.tflite
+#vela --accelerator-config ethos-u55-64 --config ./himax_vela.ini --system-config My_Sys_Cfg --memory-mode My_Mem_Mode_Parent --optimise Size --output-dir ../model_zoo ../model_zoo/qat_pruning_model.tflite
 ```
 ![vela report](./images/vela_report.png)
 
