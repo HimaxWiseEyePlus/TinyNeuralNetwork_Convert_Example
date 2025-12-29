@@ -1,5 +1,5 @@
 # TinyNeuralNetwork_Convert_Example
-The repository demonstrates using the TinyNeuralNetwork to convert Pytorch model to tflite and run on Himax WE2 chip.
+The repository demonstrates using the [TinyNeuralNetwork](https://github.com/alibaba/TinyNeuralNetwork) to convert Pytorch model to tflite and run on Himax WE2 chip.
 # Installation
 - The package has been tested in Ubuntu 20.04 LTS environment.
 - Python 3.10
