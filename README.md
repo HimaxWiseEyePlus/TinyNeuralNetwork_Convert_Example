@@ -1,5 +1,6 @@
 # TinyNeuralNetwork_Convert_Example
-The repository demonstrates using the [TinyNeuralNetwork](https://github.com/alibaba/TinyNeuralNetwork) to convert Pytorch model to tflite and run on Himax WE2 chip.
+The repository demonstrates using the [TinyNeuralNetwork](https://github.com/HimaxWiseEyePlus/TinyNeuralNetwork) to convert Pytorch model to tflite and run on Himax WE2 chip.
+
 # Installation
 - The package has been tested in Ubuntu 20.04 LTS environment.
 - Python 3.10
@@ -39,6 +40,12 @@ cp ../qat_pruning_example.py ./
 cp ../inference_int8.py ./
 
 ```
+# Important Note on Operator Support
+- [Supported PyTorch Operators](https://github.com/HimaxWiseEyePlus/TinyNeuralNetwork/blob/main/docs/op_matrix.md): There are the supported operators list at here.
+- Please read before quantization:
+  - TinyNN utilizes `PyTorch's native quantization engine` as its backend. While TinyNN automates the graph capture and operator fusion, it is strictly bound by PyTorch's supported operator set.
+  - If your model contains custom layers or complex operators that are listed as [Unsupported operators in PyTorch for static quantization](https://github.com/HimaxWiseEyePlus/TinyNeuralNetwork/blob/main/docs/quantization_support.md#unsupported-operators-in-pytorch-for-static-quantization) TinyNN may not be able to quantize them.
+
 # Convert example
 There are three example. 
 - PTQ (Post-Training Quantization) example, it will generate `out/ptq_model.tflite`
